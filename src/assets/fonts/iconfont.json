@@ -1,0 +1,149 @@
+{
+  "id": "1807832",
+  "name": "electron-思维导图",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "688086",
+      "name": "flag",
+      "font_class": "flag",
+      "unicode": "e780",
+      "unicode_decimal": 59264
+    },
+    {
+      "icon_id": "3547523",
+      "name": "color",
+      "font_class": "color",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "4767060",
+      "name": "list",
+      "font_class": "list",
+      "unicode": "e7f4",
+      "unicode_decimal": 59380
+    },
+    {
+      "icon_id": "5119332",
+      "name": "delete",
+      "font_class": "delete",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "8288905",
+      "name": "attachments",
+      "font_class": "attachments",
+      "unicode": "e85a",
+      "unicode_decimal": 59482
+    },
+    {
+      "icon_id": "8334919",
+      "name": "packUp",
+      "font_class": "packUp",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "9923736",
+      "name": "collect",
+      "font_class": "collect",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "14163802",
+      "name": "theme",
+      "font_class": "theme",
+      "unicode": "e753",
+      "unicode_decimal": 59219
+    },
+    {
+      "icon_id": "15838456",
+      "name": "copy",
+      "font_class": "copy",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "23191096",
+      "name": "website",
+      "font_class": "website",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "26234065",
+      "name": "cloud",
+      "font_class": "cloud",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "33800813",
+      "name": "format",
+      "font_class": "format",
+      "unicode": "e8d2",
+      "unicode_decimal": 59602
+    },
+    {
+      "icon_id": "4514265",
+      "name": "remark",
+      "font_class": "remark",
+      "unicode": "e7d1",
+      "unicode_decimal": 59345
+    },
+    {
+      "icon_id": "4933414",
+      "name": "image",
+      "font_class": "image",
+      "unicode": "e75d",
+      "unicode_decimal": 59229
+    },
+    {
+      "icon_id": "12752356",
+      "name": "move",
+      "font_class": "move",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "2678585",
+      "name": "导出",
+      "font_class": "daochu",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "1049981",
+      "name": "保存",
+      "font_class": "baocun",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "6569785",
+      "name": "关联",
+      "font_class": "guanlian",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "10039709",
+      "name": "撤销",
+      "font_class": "chexiao",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "10039713",
+      "name": "重做",
+      "font_class": "zhongzuo",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}
