@@ -7,7 +7,7 @@
       <IconBtn v-for="({icon, name, color, type}) in utils" :key="type" :icon="icon" :name="name" :color="color" @click="actionHandle(type)"></IconBtn>
     </div>
     <div class="btn-group">
-      <IconBtn icon="icon-format" name="样式" color="#0663f4" @click="showDialog()"></IconBtn>
+      <IconBtn icon="icon-format" name="格式" color="#0663f4" @click="showDialog()"></IconBtn>
       <IconBtn icon="icon-cloud" name="云同步" color="#0663f4" @click="send()"></IconBtn>
     </div>
   </div>
@@ -41,80 +41,101 @@ interface UtilItem {
   icon: string;
   color?: string;
   name: string;
+  children?: UtilItem[]
 }
 
 const utils: UtilItem[] = [
   {
-    type: 'move',
+    type: 'addNode',
     icon: 'icon-move',
     color: '#0c59e2',
-    name: '移动'
+    name: '主题'
   },{
-    type: 'copy',
+    type: 'addChild',
     icon: 'icon-copy',
     color: '#0b17f0',
-    name: '拷贝'
+    name: '子主题'
   },{
-    type: 'delete',
+    type: 'connection',
     icon: 'icon-delete',
-    name: '删除'
+    name: '联系'
   },{
-    type: 'image',
+    type: 'summary',
     icon: 'icon-image',
     color: '#09c91e',
-    name: '图片'
+    name: '概要'
   },{
-    type: 'remark',
+    type: 'outline',
     icon: 'icon-remark',
     color: '#f4ea29',
-    name: '备注'
-  },{
-    type: 'color',
-    icon: 'icon-color',
-    color: '#d40ad0',
-    name: '颜色'
-  },{
-    type: 'packup',
-    icon: 'icon-packUp',
-    color: '#d40ab1',
-    name: '收起'
+    name: '外框'
   },{
     type: 'flag',
-    icon: 'icon-flag',
-    color: '#d40a48',
+    icon: 'icon-color',
+    color: '#d40ad0',
     name: '标记'
   },{
-    type: 'link',
-    icon: 'icon-guanlian',
+    type: 'insert',
+    icon: 'icon-packUp',
     color: '#d40ab1',
-    name: '连接'
-  },{
-    type: 'collect',
-    icon: 'icon-collect',
-    color: '#d40a48',
-    name: '汇总'
-  },{
-    type: 'formula',
-    icon: 'icon-move',
-    color: '#6fd40a',
-    name: '公式'
-  },{
-    type: 'website',
-    icon: 'icon-website',
-    color: '#6fd40a',
-    name: '网址'
-  },{
-    type: 'attachments',
-    icon: 'icon-attachments',
-    color: '#6fd40a',
-    name: '附件'
-  },
+    name: '插入',
+    children: [
+      {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '笔记',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '标签',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '任务',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '链接',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '附件',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '贴纸',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '图片',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '本地插画',
+      }, {
+        type: 'packup',
+        icon: 'icon-packUp',
+        color: '#d40ab1',
+        name: '方程',
+      }
+    ]
+  }
 ];
 
 </script>
 
 <style scoped>
 .header{
+  /* 禁止页面全选或拖动选中文字 */
+  user-select: none;
   background: #eee;
   height: 78px;
   display: flex;
@@ -122,12 +143,8 @@ const utils: UtilItem[] = [
   justify-content: space-between;
   padding-left: 16px;
   padding-right: 16px;
-  /* position: fixed;
-  left: 0;
-  top: 0; */
   width: 100vw;
   box-sizing: border-box;
-  /* z-index: 100; */
 }
 .utils-box,
 .btn-group{

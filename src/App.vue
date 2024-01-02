@@ -4,7 +4,6 @@
   <div class="content">
     <ChooseType v-if="!currentType"></ChooseType>
     <MindMap v-if="currentType"></MindMap>
-    <!-- <DemoBehaviorkeyboard v-if="currentType"></DemoBehaviorkeyboard> -->
   </div>
 </template>
 
@@ -12,7 +11,6 @@
 import { ipcRenderer } from 'electron';
 import Header from './components/common/Header.vue';
 import MindMap from './components/MindMap.vue';
-// import DemoBehaviorkeyboard from '@/components/X6Demos/DemoBehaviorkeyboard.vue';
 import ChooseType from './components/ChooseType.vue';
 import { useStore } from 'vuex';
 import { computed } from 'vue';
@@ -24,7 +22,6 @@ const currentType = computed(() => store.state.graph.currentType);
 ipcRenderer.on('load', (_, data) => {
   console.log(data.message)
 })
-
 
 </script>
 
