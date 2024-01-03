@@ -4,7 +4,7 @@
       <IconBtn icon="icon-list" name="文字大纲" color="#e20cc4" ></IconBtn>
     </div>
     <div class="utils-box">
-      <IconBtn v-for="({icon, name, color, type}) in utils" :key="type" :icon="icon" :name="name" :color="color" @click="actionHandle(type)"></IconBtn>
+      <IconBtn v-for="(item) in utils" :key="item.type" :icon="item.icon" :name="item.name" :color="item.color" @click="actionHandle(item)"></IconBtn>
     </div>
     <div class="btn-group">
       <IconBtn icon="icon-format" name="格式" color="#0663f4" @click="showDialog()"></IconBtn>
@@ -24,8 +24,15 @@ const changLayout = () => {
   $bus.emit('changeLayout');
 }
 
-const actionHandle = (type: string) => {
-  $bus.emit('activeBtnHandler', type);
+const actionHandle = (item: UtilItem) => {
+  if(item.isPopup) {
+    console.log('打开标记弹窗');
+    $bus.emit('triggerFlag');
+  } else if(item.children) {
+    console.log('打开下拉菜单');
+  } else {
+    $bus.emit('activeBtnHandler', item.type);
+  }
 }
 
 const send = () => {
@@ -42,87 +49,89 @@ interface UtilItem {
   color?: string;
   name: string;
   children?: UtilItem[]
+  isPopup?: boolean;
 }
 
 const utils: UtilItem[] = [
   {
     type: 'addNode',
-    icon: 'icon-move',
+    icon: 'icon-sisternode',
     color: '#0c59e2',
     name: '主题'
   },{
     type: 'addChild',
-    icon: 'icon-copy',
+    icon: 'icon-subnode',
     color: '#0b17f0',
     name: '子主题'
   },{
     type: 'connection',
-    icon: 'icon-delete',
+    icon: 'icon-collect',
     name: '联系'
   },{
     type: 'summary',
-    icon: 'icon-image',
+    icon: 'icon-collect',
     color: '#09c91e',
     name: '概要'
   },{
     type: 'outline',
-    icon: 'icon-remark',
+    icon: 'icon-biankuang',
     color: '#f4ea29',
     name: '外框'
   },{
     type: 'flag',
-    icon: 'icon-color',
+    icon: 'icon-biaoji2',
     color: '#d40ad0',
-    name: '标记'
+    name: '标记',
+    isPopup: true,
   },{
     type: 'insert',
-    icon: 'icon-packUp',
+    icon: 'icon-add-bold',
     color: '#d40ab1',
     name: '插入',
     children: [
       {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-biji',
         color: '#d40ab1',
         name: '笔记',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-biaoqian1',
         color: '#d40ab1',
         name: '标签',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-renwu',
         color: '#d40ab1',
         name: '任务',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-website',
         color: '#d40ab1',
         name: '链接',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-attachments',
         color: '#d40ab1',
         name: '附件',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-RectangleCopy',
         color: '#d40ab1',
         name: '贴纸',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-image',
         color: '#d40ab1',
         name: '图片',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-mianfeisheji-',
         color: '#d40ab1',
         name: '本地插画',
       }, {
         type: 'packup',
-        icon: 'icon-packUp',
+        icon: 'icon-gongshi',
         color: '#d40ab1',
         name: '方程',
       }

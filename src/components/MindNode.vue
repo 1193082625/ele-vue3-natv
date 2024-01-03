@@ -11,9 +11,10 @@ const nodeCont = ref('子主题');
     if (getNode) {
       const node = getNode();
       nodeCont.value = node.attr('label/text');
-      node.on('change:attrs', ({key, current}: any) => {
-        console.log(key);
-        nodeCont.value = current.text.text;
+      node.on('change:attrs', ({current}: any) => {
+        nodeCont.value = current?.text?.text || current?.label?.text;
+        console.log(66, nodeCont.value);
+        
       })
     }
   })
@@ -22,7 +23,7 @@ const nodeCont = ref('子主题');
   .mind-node{
     border: 1px solid #09c91e;
     width: 120px;
-    height: 40px;
+    min-height: 40px;
     line-height: 40px;
     border-radius: 4px;
     padding-left: 8px;
